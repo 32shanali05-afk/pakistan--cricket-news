@@ -3,125 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pakistan Cricket Team - Daily News Portal</title>
+    <title>Pakistan Cricket News - Ultimate Portal</title>
     <style>
-        * {
+        :root {
+            --primary-color: #004d25; /* Pakistan Green */
+            --accent-color: #00853e;
+            --gold-color: #ffd700;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        body {
-            background-color: #f4f7f6;
-            color: #333;
-        }
+
         header {
-            background: linear-gradient(135deg, #01411c, #033516);
+            background: linear-gradient(135deg, #003318, var(--primary-color));
             color: white;
-            padding: 2rem 1rem;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 2.5rem 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-bottom: 5px solid var(--gold-color);
         }
+
         header h1 {
+            margin: 0;
             font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
         }
+
         header p {
+            margin-top: 10px;
             font-size: 1.1rem;
             color: #d1e7dd;
         }
+
+        .flag-badge {
+            background-color: var(--gold-color);
+            color: #000;
+            padding: 4px 12px;
+            font-weight: bold;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
         .container {
             max-width: 1100px;
             margin: 2rem auto;
-            padding: 0 1rem;
+            padding: 0 20px;
         }
-        .section-title {
-            font-size: 1.8rem;
-            color: #01411c;
+
+        h2.section-title {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--gold-color);
+            padding-bottom: 8px;
+            margin-top: 2rem;
             margin-bottom: 1.5rem;
-            border-bottom: 3px solid #01411c;
-            display: inline-block;
-            padding-bottom: 0.3rem;
+            font-size: 1.8rem;
         }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2.5rem;
+            gap: 20px;
         }
+
         .card {
-            background: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            border-top: 4px solid #01411c;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--accent-color);
         }
-        .card h3 {
-            margin-bottom: 0.8rem;
-            color: #222;
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
         }
-        .card p {
-            color: #666;
-            line-height: 1.5;
-        }
-        .date {
+
+        .card .date {
             font-size: 0.85rem;
-            color: #01411c;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            display: block;
+            color: #666;
+            font-weight: 600;
+            text-transform: uppercase;
         }
-        footer {
-            background-color: #01411c;
-            color: white;
+
+        .card h3 {
+            color: var(--primary-color);
+            margin: 10px 0;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .player-card {
             text-align: center;
-            padding: 1.5rem;
+            background: linear-gradient(to bottom, #ffffff, #f9fbf9);
+        }
+
+        .player-img {
+            width: 90px;
+            height: 90px;
+            background-color: #004d25;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin: 0 auto 15px auto;
+            border: 3px solid var(--gold-color);
+            box-shadow: 0 4px 10px rgba(0,77,37,0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #00220f;
+            color: white;
             margin-top: 3rem;
+            font-size: 0.9rem;
+            border-top: 4px solid var(--gold-color);
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Pakistan Cricket Team 🇵🇰</h1>
-        <p>Daily News Portal & Match Updates</p>
+        <span class="flag-badge">🇵🇰 Pakistan Cricket Live Portal</span>
+        <h1>Green Shirts News & Hub</h1>
+        <p>Your ultimate destination for Pakistan Cricket Team updates, breaking news, and player stats.</p>
     </header>
 
     <div class="container">
-        <h2 class="section-title">📰 Rozana Ki Khabrein (Daily News)</h2>
+        
+        <!-- Breaking News Section -->
+        <h2 class="section-title">🔥 Latest Breaking News</h2>
         <div class="grid">
-<div class="card">
-    <span class="date">📅 22 September 2026 - Breaking News</span>
-    <h3>Pakistan Women Win Bronze Medal in Asian Games!</h3>
-    <p>Pakistan women's cricket team defeated Bangladesh by 31 runs to secure the Bronze Medal. Captain Fatima Sana played a brilliant knock of 45 runs and took 1 wicket, while Umm-e-Hani delivered a stunning bowling spell of 3/10.</p>
-</div>
-            <div class="card">
-                <span class="date">📅 Match Report</span>
-                <h3>Net Practice Session Highlights</h3>
-                <p>The Green Shirts underwent an intense training session at the local stadium, focusing heavily on power hitting and bowling variations.</p>
+            <div class="card" style="border-top-color: #d9534f;">
+                <span class="date">📅 22 September 2026</span>
+                <h3>Pakistan Women Win Bronze in Asian Games!</h3>
+                <p>Pakistan women's cricket team defeated Bangladesh by 31 runs to secure the Bronze Medal. Captain Fatima Sana scored 45 runs & took 1 wicket, while Umm-e-Hani took 3/10.</p>
             </div>
+
             <div class="card">
-                <span class="date">📅 Player Exclusive</span>
-                <h3>Fitness Camp Updates</h3>
-                <p>All players cleared the rigorous fitness tests successfully under the strict supervision of the team trainers and coaching staff.</p>
+                <span class="date">📅 Recent Update</span>
+                <h3>PCB Restricts Mohammad Rizwan from Media Interviews</h3>
+                <p>The Pakistan Cricket Board (PCB) has reportedly barred wicketkeeper-batsman Mohammad Rizwan from giving independent media interviews to external news outlets.</p>
             </div>
         </div>
 
-        <h2 class="section-title">⭐ Team Legacy</h2>
+        <!-- Star Players Section -->
+        <h2 class="section-title">⭐ Pakistan Star Players</h2>
         <div class="grid">
-            <div class="card">
-                <h3>⚡ Lethal Bowling Attack</h3>
-                <p>Pakistan is globally recognized for producing world-class fast bowlers and deceptive spinners who dominate world cricket.</p>
+            <div class="card player-card">
+                <div class="player-img">👑</div>
+                <h3>Babar Azam</h3>
+                <p><strong>Role:</strong> Top-Order Batter<br>The modern batting maestro and former captain, known for classy cover drives.</p>
             </div>
-            <div class="card">
-                <h3>🏏 Batting Powerhouses</h3>
-                <p>Aggressive openers and reliable middle-order anchors capable of turning matches around from any situation.</p>
+
+            <div class="card player-card">
+                <div class="player-img">🦅</div>
+                <h3>Shaheen Shah Afridi</h3>
+                <p><strong>Role:</strong> Lead Fast Bowler<br>Famous for destroying opposition opening batters with lethal first-over swing.</p>
+            </div>
+
+            <div class="card player-card">
+                <div class="player-img">🦁</div>
+                <h3>Mohammad Rizwan</h3>
+                <p><strong>Role:</strong> Wicketkeeper / Batter<br>The warrior of Pakistan cricket, recognized for his grit, passion, and consistency.</p>
+            </div>
+
+            <div class="card player-card">
+                <div class="player-img">⭐</div>
+                <h3>Fatima Sana</h3>
+                <p><strong>Role:</strong> Women Team Captain / All-rounder<br>An inspiring leader delivering match-winning performances with bat and ball.</p>
             </div>
         </div>
+
     </div>
 
     <footer>
-        <p>&copy; 2026 Pakistan Cricket Fan Portal. Built with GitHub.</p>
+        <p>&copy; 2026 Pakistan Cricket Portal | Proudly Designed for Pakistan Cricket Fans 🇵🇰</p>
     </footer>
 
 </body>
