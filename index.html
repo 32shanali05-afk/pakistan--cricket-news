@@ -49,7 +49,6 @@
             padding: 3rem 1rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             border-bottom: 6px solid var(--gold);
-            position: relative;
         }
 
         header h1 {
@@ -138,6 +137,17 @@
             text-align: center;
             background: linear-gradient(to bottom, #ffffff, #f1f8f3);
             border-top-color: var(--gold);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .player-card::after {
+            content: 'Click for Bio 🔍';
+            display: block;
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: var(--secondary);
+            font-weight: bold;
         }
 
         .player-img {
@@ -153,6 +163,65 @@
             margin: 0 auto 18px auto;
             border: 4px solid var(--gold);
             box-shadow: 0 6px 15px rgba(0,59,28,0.25);
+        }
+
+        /* Modal Popup Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 16px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            border-top: 6px solid var(--gold);
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #aaa;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover {
+            color: var(--dark);
+        }
+
+        .modal-content h3 {
+            color: var(--primary);
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+
+        .modal-content p {
+            line-height: 1.7;
+            color: #444;
         }
 
         footer {
@@ -203,38 +272,67 @@
             </div>
         </div>
 
-        <h2 class="section-title">⭐ Pakistan Star Players</h2>
+        <h2 class="section-title">⭐ Pakistan Star Players (Click to View Bio)</h2>
         <div class="grid">
-            <div class="card player-card">
+            <div class="card player-card" onclick="openBio('Babar Azam', 'Babar Azam is widely regarded as one of the best contemporary batsmen in world cricket. Known for his elegant cover drives and consistency across all formats, he has broken numerous records as a former captain and world-class top-order batter for Pakistan.')">
                 <div class="player-img">👑</div>
                 <h3>Babar Azam</h3>
-                <p><strong>Role:</strong> Top-Order Batter<br>The modern batting maestro and former captain, known for classy cover drives.</p>
+                <p><strong>Role:</strong> Top-Order Batter<br>The modern batting maestro known for classy cover drives.</p>
             </div>
 
-            <div class="card player-card">
+            <div class="card player-card" onclick="openBio('Shaheen Shah Afridi', 'Shaheen Shah Afridi is Pakistan premier left-arm fast bowler, internationally feared for his lethal first-over swing and yorkers. He led Lahore Qalandars to consecutive PSL titles and remains a frontline strike bowler for the national team.')">
                 <div class="player-img">🦅</div>
                 <h3>Shaheen Shah Afridi</h3>
-                <p><strong>Role:</strong> Lead Fast Bowler<br>Famous for destroying opposition opening batters with lethal first-over swing.</p>
+                <p><strong>Role:</strong> Lead Fast Bowler<br>Famous for destroying opposition opening batters with pace and swing.</p>
             </div>
 
-            <div class="card player-card">
+            <div class="card player-card" onclick="openBio('Mohammad Rizwan', 'Mohammad Rizwan is the warrior and heart of Pakistan cricket. Renowned for his exceptional wicketkeeping skills, fierce determination, and incredible stamina as an opening batsman, he is a vital pillar in all formats of the game.')">
                 <div class="player-img">🦁</div>
                 <h3>Mohammad Rizwan</h3>
-                <p><strong>Role:</strong> Wicketkeeper / Batter<br>The warrior of Pakistan cricket, recognized for his grit, passion, and consistency.</p>
+                <p><strong>Role:</strong> Wicketkeeper / Batter<br>Recognized for his grit, passion, leadership, and consistency.</p>
             </div>
 
-            <div class="card player-card">
+            <div class="card player-card" onclick="openBio('Fatima Sana', 'Fatima Sana is an inspiring all-rounder and the captain of the Pakistan Womens cricket team. She is celebrated for her fearless leadership, match-winning bowling spells, and clutch batting performances under pressure.')">
                 <div class="player-img">⭐</div>
                 <h3>Fatima Sana</h3>
-                <p><strong>Role:</strong> Women Team Captain / All-rounder<br>An inspiring leader delivering match-winning performances with bat and ball.</p>
+                <p><strong>Role:</strong> Women Team Captain / All-rounder<br>An inspiring leader delivering match-winning performances.</p>
             </div>
         </div>
 
     </div>
 
+    <!-- Modal Popup Box -->
+    <div id="bioModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeBio()">&times;</span>
+            <h3 id="modalTitle">Player Name</h3>
+            <p id="modalText">Player biography will appear here...</p>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2026 Pakistan Cricket Portal | Proudly Designed for Pakistan Cricket Fans 🇵🇰</p>
     </footer>
+
+    <script>
+        function openBio(name, bio) {
+            document.getElementById('modalTitle').innerText = name;
+            document.getElementById('modalText').innerText = bio;
+            document.getElementById('bioModal').style.display = 'flex';
+        }
+
+        function closeBio() {
+            document.getElementById('bioModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside the box
+        window.onclick = function(event) {
+            let modal = document.getElementById('bioModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 
 </body>
 </html>
