@@ -34,7 +34,7 @@
 
         .ticker {
             display: inline-block;
-            animation: ticker 25s linear infinite;
+            animation: ticker 35s linear infinite;
         }
 
         @keyframes ticker {
@@ -56,6 +56,7 @@
             font-size: 2.8rem;
             letter-spacing: 1.5px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-transform: uppercase;
         }
 
         header p {
@@ -91,13 +92,8 @@
             margin-top: 2.5rem;
             margin-bottom: 1.8rem;
             font-size: 2rem;
-            font-weight: 700;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            font-weight: 800;
+            text-transform: uppercase;
         }
 
         .card {
@@ -107,6 +103,7 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.07);
             transition: all 0.4s ease;
             border-top: 5px solid var(--secondary);
+            margin-bottom: 25px;
         }
 
         .card:hover {
@@ -117,7 +114,7 @@
         .card .date {
             font-size: 0.85rem;
             color: #777;
-            font-weight: 700;
+            font-weight: 800;
             text-transform: uppercase;
         }
 
@@ -125,6 +122,7 @@
             color: var(--primary);
             margin: 12px 0;
             font-size: 1.4rem;
+            font-weight: 800;
         }
 
         .card p {
@@ -133,21 +131,33 @@
             color: #444;
         }
 
+        .highlight-text {
+            color: #003b1c;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
         .player-card {
             text-align: center;
             background: linear-gradient(to bottom, #ffffff, #f1f8f3);
             border-top-color: var(--gold);
             cursor: pointer;
-            position: relative;
+            margin-bottom: 0;
         }
 
         .player-card::after {
-            content: 'Click for Bio 🔍';
+            content: 'CLICK FOR BIO 🔍';
             display: block;
             margin-top: 15px;
             font-size: 0.85rem;
             color: var(--secondary);
-            font-weight: bold;
+            font-weight: 800;
         }
 
         .player-img {
@@ -190,12 +200,6 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.3);
             border-top: 6px solid var(--gold);
             position: relative;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .close-btn {
@@ -206,22 +210,10 @@
             font-weight: bold;
             color: #aaa;
             cursor: pointer;
-            transition: color 0.2s;
         }
 
         .close-btn:hover {
             color: var(--dark);
-        }
-
-        .modal-content h3 {
-            color: var(--primary);
-            margin-top: 0;
-            font-size: 1.8rem;
-        }
-
-        .modal-content p {
-            line-height: 1.7;
-            color: #444;
         }
 
         footer {
@@ -232,6 +224,8 @@
             margin-top: 4rem;
             font-size: 1rem;
             border-top: 6px solid var(--gold);
+            text-transform: uppercase;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -239,63 +233,69 @@
 
     <div class="ticker-wrap">
         <div class="ticker">
-            🚨 Latest Updates: Sarfaraz Ahmed guides Asian Games Squad &bull; Pakistan Women secure Bronze Medal in Asian Games &bull; PCB restricts Mohammad Rizwan from external media interviews.
+            🚨 28 SEPT UPDATES: PAKISTAN REACHES ASIAN GAMES SEMI-FINAL AFTER MATCH AGAINST HONG KONG WASHED OUT DUE TO RAIN! &bull; BABAR AZAM RETURNS TO DOMESTIC FIRST-CLASS CRICKET &bull; PCB DISCUSSES POTENTIAL COACHING ROLES WITH SHAUN TAIT & MARTIN GUPTILL &bull; SCHOOL TALENT HUNT PROGRAMME EXPANDS TO 100 DISTRICTS.
         </div>
     </div>
 
     <header>
-        <span class="flag-badge">🇵🇰 Pakistan Cricket Live Portal</span>
-        <h1>Green Shirts News & Hub</h1>
+        <span class="flag-badge">🇵🇰 PAKISTAN CRICKET LIVE PORTAL</span>
+        <h1>GREEN SHIRTS NEWS & HUB</h1>
         <p>Your ultimate destination for Pakistan Cricket Team updates, exclusive breaking news, and player profiles.</p>
     </header>
 
     <div class="container">
         
-        <h2 class="section-title">🔥 Latest Breaking News</h2>
+        <h2 class="section-title">🔥 LATEST BREAKING NEWS (28 SEPTEMBER 2026)</h2>
         <div class="grid">
             <div class="card" style="border-top-color: #d9534f;">
-                <span class="date">📅 23 September 2026</span>
-                <h3>Sarfaraz Ahmed Guides Asian Games Squad</h3>
-                <p>Former Pakistan captain Sarfaraz Ahmed joined the Asian Games squad today, sharing his invaluable experience and practicing closely to guide the players for upcoming matches.</p>
+                <span class="date">📅 28 SEPTEMBER 2026</span>
+                <h3>PAKISTAN REACHES ASIAN GAMES SEMI-FINAL!</h3>
+                <p>The quarter-final match between <span class="highlight-text">PAKISTAN</span> and <span class="highlight-text">HONG KONG</span> was washed out due to continuous rain without a single ball bowled. Thanks to a superior T20I ranking, <span class="highlight-text">PAKISTAN</span> directly advanced to the <span class="highlight-text">SEMI-FINALS</span>[cite: 1].</p>
             </div>
 
             <div class="card">
-                <span class="date">📅 22 September 2026</span>
-                <h3>Pakistan Women Win Bronze in Asian Games!</h3>
-                <p>Pakistan women's cricket team defeated Bangladesh by 31 runs to secure the Bronze. Captain Fatima Sana scored 45 runs & took 1 wicket, while Umm-e-Hani took 3/10.</p>
+                <span class="date">📅 28 SEPTEMBER 2026</span>
+                <h3>BABAR AZAM RETURNS TO DOMESTIC FIRST-CLASS CRICKET</h3>
+                <p><span class="highlight-text">BABAR AZAM</span> made his return to domestic first-class cricket after nearly six years[cite: 1], featuring in the <span class="highlight-text">ABBOTTABAD PRESIDENTS CUP</span>[cite: 1], though he missed out on big scores in both innings[cite: 1].</p>
             </div>
 
             <div class="card">
-                <span class="date">📅 Recent Update</span>
-                <h3>PCB Restricts Mohammad Rizwan from Media Interviews</h3>
-                <p>The Pakistan Cricket Board (PCB) has reportedly barred wicketkeeper-batsman Mohammad Rizwan from giving independent media interviews to external news outlets.</p>
+                <span class="date">📅 28 SEPTEMBER 2026</span>
+                <h3>PCB EXPLORING NEW COACHING STAFF OPTIONS</h3>
+                <p>Reports suggest the <span class="highlight-text">PCB</span> has held discussions with <span class="highlight-text">SHAUN TAIT</span> and <span class="highlight-text">MARTIN GUPTILL</span> regarding potential bowling and fielding consultancy roles respectively[cite: 1], though official appointments are yet to be confirmed[cite: 1].</p>
+            </div>
+
+            <div class="card">
+                <span class="date">📅 28 SEPTEMBER 2026</span>
+                <h3>PCB SCHOOL TALENT HUNT PROGRAMME EXPANDS</h3>
+                <p>According to the <span class="highlight-text">PAKISTAN CRICKET BOARD</span>, the second phase of their <span class="highlight-text">SCHOOL TALENT HUNT PROGRAMME</span> has successfully integrated 21,000 students across 100 districts[cite: 1].</p>
             </div>
         </div>
 
-        <h2 class="section-title">⭐ Pakistan Star Players (Click to View Bio)</h2>
+        <h2 class="section-title">⭐ PAKISTAN STAR PLAYERS (CLICK TO VIEW BIO)</h2>
         <div class="grid">
-            <div class="card player-card" onclick="openBio('Babar Azam', 'Babar Azam is widely regarded as one of the best contemporary batsmen in world cricket. Known for his elegant cover drives and consistency across all formats, he has broken numerous records as a former captain and world-class top-order batter for Pakistan.')">
+            <div class="card player-card" onclick="openBio('BABAR AZAM', 'Babar Azam is widely regarded as one of the best contemporary batsmen in world cricket. Known for his elegant cover drives and consistency across all formats, he recently returned to domestic first-class cricket in the Presidents Cup[cite: 1].')">
                 <div class="player-img">👑</div>
-                <h3>Babar Azam</h3>
-                <p><strong>Role:</strong> Top-Order Batter<br>The modern batting maestro known for classy cover drives.</p>
+                <h3>BABAR AZAM</h3>
+                <p><strong>Role:</strong> TOP-ORDER BATTER<br>The modern batting maestro known for classy cover drives.</p>
             </div>
 
-            <div class="card player-card" onclick="openBio('Shaheen Shah Afridi', 'Shaheen Shah Afridi is Pakistan premier left-arm fast bowler, internationally feared for his lethal first-over swing and yorkers. He led Lahore Qalandars to consecutive PSL titles and remains a frontline strike bowler for the national team.')">
+            <div class="card player-card" onclick="openBio('SHAHEEN SHAH AFRIDI', 'Shaheen Shah Afridi is Pakistan premier left-arm fast bowler, internationally feared for his lethal first-over swing and yorkers. He led Lahore Qalandars to consecutive PSL titles and remains a frontline strike bowler.')">
                 <div class="player-img">🦅</div>
-                <h3>Shaheen Shah Afridi</h3>
-                <p><strong>Role:</strong> Lead Fast Bowler<br>Famous for destroying opposition opening batters with pace and swing.</p>
+                <h3>SHAHEEN SHAH AFRIDI</h3>
+                <p><strong>Role:</strong> LEAD FAST BOWLER<br>Famous for destroying opposition opening batters with pace and swing.</p>
             </div>
 
-            <div class="card player-card" onclick="openBio('Mohammad Rizwan', 'Mohammad Rizwan is the warrior and heart of Pakistan cricket. Renowned for his exceptional wicketkeeping skills, fierce determination, and incredible stamina as an opening batsman, he is a vital pillar in all formats of the game.')">
+            <div class="card player-card" onclick="openBio('MOHAMMAD RIZWAN', 'Mohammad Rizwan is the warrior and heart of Pakistan cricket. Renowned for his exceptional wicketkeeping skills, fierce determination, and incredible stamina as an opening batsman.')">
                 <div class="player-img">🦁</div>
-                <h3>Mohammad Rizwan</h3>
-                <p><strong>Role:</strong> Wicketkeeper / Batter<br>Recognized for his grit, passion, leadership, and consistency.</p>
+                <h3>MOHAMMAD RIZWAN</h3>
+                <p><strong>Role:</strong> WICKETKEEPER / BATTER<br>Recognized for his grit, passion, leadership, and consistency.</p>
             </div>
 
-            <div class="card player-card" onclick="openBio('Fatima Sana', 'Fatima Sana is an inspiring all-rounder and the captain of the Pakistan Womens cricket team. She is celebrated for her fearless leadership, match-winning bowling spells, and clutch batting performances under pressure.')">
+            <div class="card player-card" onclick="openBio('FATIMA SANA', 'Fatima Sana is an inspiring all-rounder and the captain of the Pakistan Womens cricket team. She is celebrated for her fearless leadership and match-winning performances.')">
                 <div class="player-img">⭐</div>
-                <h3>Fatima Sana</h3>
-                <p><strong>Role:</strong> Women Team Captain / All-rounder<br>An inspiring leader delivering match-winning performances.</p>
+                <h3>FATIMA SANA</h3>
+                <p><strong>Role:</strong> WOMEN TEAM CAPTAIN / ALL-ROUNDER<br>An inspiring leader delivering match-winning performances.</p>
             </div>
         </div>
 
@@ -305,13 +305,13 @@
     <div id="bioModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeBio()">&times;</span>
-            <h3 id="modalTitle">Player Name</h3>
+            <h3 id="modalTitle">PLAYER NAME</h3>
             <p id="modalText">Player biography will appear here...</p>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Pakistan Cricket Portal | Proudly Designed for Pakistan Cricket Fans 🇵🇰</p>
+        <p>&copy; 2026 PAKISTAN CRICKET PORTAL | PROUDLY DESIGNED FOR PAKISTAN CRICKET FANS 🇵🇰</p>
     </footer>
 
     <script>
@@ -325,7 +325,6 @@
             document.getElementById('bioModal').style.display = 'none';
         }
 
-        // Close modal when clicking outside the box
         window.onclick = function(event) {
             let modal = document.getElementById('bioModal');
             if (event.target == modal) {
