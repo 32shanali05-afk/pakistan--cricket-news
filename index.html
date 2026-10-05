@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pakistan Cricket News - Ultimate Portal</title>
+    <title>Pakistan Squads - Sri Lanka Series & ODI Tri-Series</title>
     <style>
         :root {
             --primary: #003b1c;
@@ -89,11 +89,12 @@
             color: var(--primary);
             border-bottom: 4px solid var(--gold);
             padding-bottom: 10px;
-            margin-top: 2.5rem;
+            margin-top: 1rem;
             margin-bottom: 1.8rem;
             font-size: 2rem;
             font-weight: 800;
             text-transform: uppercase;
+            text-align: center;
         }
 
         .card {
@@ -124,12 +125,26 @@
             font-size: 1.4rem;
             font-weight: 800;
             text-transform: uppercase;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 8px;
         }
 
-        .card p {
-            font-size: 1rem;
-            line-height: 1.7;
-            color: #444;
+        .card ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+
+        .card ul li {
+            padding: 8px 12px;
+            margin-bottom: 5px;
+            background: #f1f8f3;
+            border-radius: 6px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: var(--primary);
+            display: flex;
+            justify-content: space-between;
         }
 
         .highlight-text {
@@ -141,86 +156,12 @@
         .match-alert {
             background: linear-gradient(135deg, #fff3cd 0%, #ffeeba 100%);
             border-top: 6px solid #ffc107;
-            border-left: 6px solid var(--primary);
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 25px;
-        }
-
-        .player-card {
-            text-align: center;
-            background: linear-gradient(to bottom, #ffffff, #f1f8f3);
-            border-top-color: var(--gold);
-            cursor: pointer;
-            margin-bottom: 0;
-        }
-
-        .player-card::after {
-            content: 'CLICK FOR BIO 🔍';
-            display: block;
-            margin-top: 15px;
-            font-size: 0.85rem;
-            color: var(--secondary);
-            font-weight: 800;
-        }
-
-        .player-img {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.2rem;
-            margin: 0 auto 18px auto;
-            border: 4px solid var(--gold);
-            box-shadow: 0 6px 15px rgba(0,59,28,0.25);
-        }
-
-        /* Modal Popup Styling */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.6);
-            backdrop-filter: blur(5px);
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .modal-content {
-            background-color: white;
-            padding: 30px;
-            border-radius: 16px;
-            max-width: 500px;
-            width: 100%;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-            border-top: 6px solid var(--gold);
-            position: relative;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #aaa;
-            cursor: pointer;
-        }
-
-        .close-btn:hover {
-            color: var(--dark);
         }
 
         footer {
@@ -240,107 +181,76 @@
 
     <div class="ticker-wrap">
         <div class="ticker">
-            🚨 BIG BREAKING: PAKISTAN VS BANGLADESH ASIAN GAMES SEMI-FINAL ON 1 OCTOBER AT 5:00 AM PKT IN NISSAN, JAPAN! &bull; PCB ANNOUNCES HOME SERIES AGAINST SRI LANKA & TRI-SERIES WITH ENGLAND &bull; BABAR AZAM JOINS OGDCL IN PRESIDENT'S TROPHY GRADE-I &bull; WOMEN'S U19 TRI-NATION SERIES STARTS 2 OCTOBER IN FAISALABAD.
+            🚨 OFFICIAL SQUADS ANNOUNCED: PAKISTAN SQUADS FOR SRI LANKA T20IS AND ODI TRI-SERIES &bull; SAHIBZADA FARHAN (T20I CAPTAIN) &bull; SHAHEEN SHAH AFRIDI (ODI CAPTAIN) &bull; CHECK COMPLETE SQUADS BELOW.
         </div>
     </div>
 
     <header>
-        <span class="flag-badge">🇵🇰 PAKISTAN CRICKET LIVE PORTAL</span>
-        <h1>GREEN SHIRTS NEWS & HUB</h1>
-        <p>Your ultimate destination for Pakistan Cricket Team updates, exclusive breaking news, and player profiles.</p>
+        <span class="flag-badge">🇵🇰 PAKISTAN CRICKET OFFICIAL PORTAL</span>
+        <h1>PAKISTAN SQUADS HUB</h1>
+        <p>Official PCB squad announcements for Sri Lanka T20Is and ODI Tri-Series.</p>
     </header>
 
     <div class="container">
         
-        <h2 class="section-title">🔥 LATEST BREAKING NEWS & UPDATES</h2>
+        <h2 class="section-title">🔥 OFFICIAL TEAM SQUADS</h2>
         
         <div class="grid">
+            <!-- T20I Squad Card -->
             <div class="card match-alert">
-                <span class="date">📅 1 OCTOBER 2026</span>
-                <h3>PAKISTAN VS BANGLADESH — ASIAN GAMES SEMI-FINAL</h3>
-                <p>The <span class="highlight-text">SEMI-FINAL</span> showdown is locked! <span class="highlight-text">PAKISTAN</span> will face <span class="highlight-text">BANGLADESH</span> on <span class="highlight-text">1 OCTOBER AT 5:00 AM (PAKISTAN TIME)</span> in <span class="highlight-text">NISSAN, JAPAN</span>.</p>
-                <p>Earlier, <span class="highlight-text">PAKISTAN</span> reached the semi-finals based on a better <span class="highlight-text">ICC RANKING</span> after their quarter-final against <span class="highlight-text">HONG KONG</span> was washed out due to rain.</p>
+                <span class="date">📅 OFFICIAL SQUAD</span>
+                <h3>PAKISTAN T20I SQUAD</h3>
+                <p>Captain: <span class="highlight-text">SAHIBZADA FARHAN (C)</span></p>
+                <ul>
+                    <li><span>1. Sahibzada Farhan (C)</span></li>
+                    <li><span>2. Abdul Samad</span></li>
+                    <li><span>3. Abrar Ahmed</span></li>
+                    <li><span>4. Arafat Minhas</span></li>
+                    <li><span>5. Fakhar Zaman</span></li>
+                    <li><span>6. Hasan Nawaz</span></li>
+                    <li><span>7. Muhammad Imran</span></li>
+                    <li><span>8. Khawaja Nafay (WK)</span></li>
+                    <li><span>9. Maaz Sadaqat</span></li>
+                    <li><span>10. Naseem Shah</span></li>
+                    <li><span>11. Razaullah</span></li>
+                    <li><span>12. Saim Ayub</span></li>
+                    <li><span>13. Mohammad Salman Mirza</span></li>
+                    <li><span>14. Shadab Khan</span></li>
+                    <li><span>15. Sufiyan Moqim</span></li>
+                </ul>
             </div>
 
+            <!-- ODI Squad Card -->
             <div class="card">
-                <span class="date">📅 OCTOBER 2026 SCHEDULE</span>
-                <h3>PAKISTAN'S UPCOMING HOME INTERNATIONAL SERIES</h3>
-                <p>The <span class="highlight-text">PCB</span> has finalized the schedule for upcoming home matches. <span class="highlight-text">PAKISTAN</span> will play <span class="highlight-text">3 T20Is</span> against <span class="highlight-text">SRI LANKA</span> on <span class="highlight-text">9, 11, AND 13 OCTOBER</span>, followed by an <span class="highlight-text">ODI TRI-SERIES</span> featuring <span class="highlight-text">PAKISTAN, ENGLAND, AND SRI LANKA</span>.</p>
-            </div>
-
-            <div class="card">
-                <span class="date">📅 DOMESTIC CRICKET UPDATE</span>
-                <h3>BABAR AZAM & NATIONAL STARS IN DOMESTIC CRICKET</h3>
-                <p><span class="highlight-text">BABAR AZAM</span> has officially joined the <span class="highlight-text">OGDCL TEAM</span>, while other national stars including <span class="highlight-text">NASEEM SHAH, ABDULLAH SHAFIQ, AND SAUD SHAKEEL</span> are actively representing various departmental teams in the <span class="highlight-text">PRESIDENT'S TROPHY GRADE-I</span>.</p>
-            </div>
-
-            <div class="card">
-                <span class="date">📅 2 OCTOBER 2026</span>
-                <h3>PAKISTAN WOMEN'S U19 TRI-NATION SERIES</h3>
-                <p>The <span class="highlight-text">T20 TRI-NATION SERIES</span> involving <span class="highlight-text">PAKISTAN, BANGLADESH, AND SRI LANKA</span> women's U19 teams is all set to kick off from <span class="highlight-text">2 OCTOBER</span> in <span class="highlight-text">FAISALABAD</span>.</p>
+                <span class="date">📅 OFFICIAL SQUAD</span>
+                <h3>PAKISTAN ODI SQUAD</h3>
+                <p>Captain: <span class="highlight-text">SHAHEEN SHAH AFRIDI (C)</span></p>
+                <ul>
+                    <li><span>1. Shaheen Shah Afridi (C)</span></li>
+                    <li><span>2. Abrar Ahmed</span></li>
+                    <li><span>3. Arafat Minhas</span></li>
+                    <li><span>4. Babar Azam</span></li>
+                    <li><span>5. Faheem Ashraf</span></li>
+                    <li><span>6. Fakhar Zaman</span></li>
+                    <li><span>7. Haris Rauf</span></li>
+                    <li><span>8. Hasan Nawaz</span></li>
+                    <li><span>9. Muhammad Ghazi Ghori (WK)</span></li>
+                    <li><span>10. Naseem Shah</span></li>
+                    <li><span>11. Razaullah</span></li>
+                    <li><span>12. Saad Baig (WK)</span></li>
+                    <li><span>13. Saim Ayub</span></li>
+                    <li><span>14. Salman Ali Agha</span></li>
+                    <li><span>15. Shadab Khan</span></li>
+                    <li><span>16. Sufiyan Moqim</span></li>
+                </ul>
             </div>
         </div>
 
-        <h2 class="section-title">⭐ PAKISTAN STAR PLAYERS (CLICK TO VIEW BIO)</h2>
-        <div class="grid">
-            <div class="card player-card" onclick="openBio('BABAR AZAM', 'Babar Azam is widely regarded as one of the best contemporary batsmen in world cricket. Known for his elegant cover drives and consistency across all formats, he has recently joined the OGDCL departmental team for domestic tournaments.')">
-                <div class="player-img">👑</div>
-                <h3>BABAR AZAM</h3>
-                <p><strong>Role:</strong> TOP-ORDER BATTER<br>The modern batting maestro known for classy cover drives.</p>
-            </div>
-
-            <div class="card player-card" onclick="openBio('NASEEM SHAH', 'Naseem Shah is an explosive and fiery fast bowler known for his exceptional pace, swing with the new ball, and crucial breakthroughs for Pakistan across all formats.')">
-                <div class="player-img">⚡</div>
-                <h3>NASEEM SHAH</h3>
-                <p><strong>Role:</strong> FAST BOWLER<br>Renowned for terrifying opposition batters with raw pace and late movement.</p>
-            </div>
-
-            <div class="card player-card" onclick="openBio('MOHAMMAD RIZWAN', 'Mohammad Rizwan is the warrior and heart of Pakistan cricket. Renowned for his exceptional wicketkeeping skills, fierce determination, and incredible stamina as an opening batsman.')">
-                <div class="player-img">🦁</div>
-                <h3>MOHAMMAD RIZWAN</h3>
-                <p><strong>Role:</strong> WICKETKEEPER / BATTER<br>Recognized for his grit, passion, leadership, and consistency.</p>
-            </div>
-
-            <div class="card player-card" onclick="openBio('FATIMA SANA', 'Fatima Sana is an inspiring all-rounder and the captain of the Pakistan Women cricket team. She is celebrated for her fearless leadership and match-winning performances.')">
-                <div class="player-img">⭐</div>
-                <h3>FATIMA SANA</h3>
-                <p><strong>Role:</strong> WOMEN TEAM CAPTAIN / ALL-ROUNDER<br>An inspiring leader delivering match-winning performances.</p>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Modal Popup Box -->
-    <div id="bioModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeBio()">&times;</span>
-            <h3 id="modalTitle">PLAYER NAME</h3>
-            <p id="modalText">Player biography will appear here...</p>
-        </div>
     </div>
 
     <footer>
         <p>&copy; 2026 PAKISTAN CRICKET PORTAL | PROUDLY DESIGNED FOR PAKISTAN CRICKET FANS 🇵🇰</p>
     </footer>
-
-    <script>
-        function openBio(name, bio) {
-            document.getElementById('modalTitle').innerText = name;
-            document.getElementById('modalText').innerText = bio;
-            document.getElementById('bioModal').style.display = 'flex';
-        }
-
-        function closeBio() {
-            document.getElementById('bioModal').style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            let modal = document.getElementById('bioModal');
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
-    </script>
 
 </body>
 </html>
